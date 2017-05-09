@@ -20,11 +20,10 @@ produces:
 paths:
   /todo:
     # binds a127 app logic to a route
-    x-inceptum-controller: TodoController
     post:
       description: Create a new TODO
       # used as the method name of the controller
-      x-inceptum-operation: createTodo(todo)
+      x-inceptum-cqrs-commmand: CreateTodoCommand
       parameters:
         - name: todo
           in: body
@@ -48,6 +47,7 @@ paths:
     get:
       description: Get's a list of todos
       # used as the method name of the controller
+      x-inceptum-controller: TodoController
       x-inceptum-operation: listTodos(page, pageSize)
       parameters:
         - $ref: "#/parameters/page"
@@ -86,7 +86,7 @@ paths:
             $ref: "#/definitions/ErrorResponse"
   /todo/{id}/complete:
     # binds a127 app logic to a route
-    x-inceptum-controller: TodoController
+    x-inceptum-cqrs-commmand: MarkTodoDoneCommand
     post:
       description: Marks a todo as completed
       consumes: ['application/json', 'application/octet-stream']

@@ -41,7 +41,7 @@ logging:
         mainLogFile: error
     - name: ioc/
       streams:
-        console: info
+        console: debug
 #        myredis: info
     - name: mysql/
       streams:
