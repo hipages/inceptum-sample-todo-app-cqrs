@@ -9,7 +9,7 @@
   "main": "src/app.js",
   "dependencies": {
     "inceptum-swagger-cqrs": "0.1.0",
-    "uuid": "3.0.1"
+    "uuid": "7.0.2"
   },
   "devDependencies": {
     "should": "^7.1.0",
