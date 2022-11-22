@@ -9,7 +9,8 @@
   "main": "src/app.js",
   "dependencies": {
     "inceptum-swagger-cqrs": "0.1.0",
-    "uuid": "3.0.1"
+    "uuid": "3.0.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "should": "^7.1.0",
@@ -18,6 +19,9 @@
   "scripts": {
     "start": "node src/app.js",
     "test": "swagger project test",
-    "edit": "swagger_swagger_fileName=src/api/swagger/swagger.yaml swagger project edit"
-  }
+    "edit": "swagger_swagger_fileName=src/api/swagger/swagger.yaml swagger project edit",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "snyk": true
 }
